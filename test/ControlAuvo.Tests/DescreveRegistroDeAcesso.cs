@@ -13,7 +13,7 @@ namespace ControlAuvo.Tests
         {
             //Arrange
             //Act
-            var employee = new Employee("Joao");
+            var employee = new Empregado("Joao");
             var registro = new Registro(ETipoRegistro.Entrada, DateTime.Now, employee);
 
             //Assert 
@@ -25,7 +25,7 @@ namespace ControlAuvo.Tests
         {
             //Arrange
             //Act
-            var employee = new Employee("Joao");
+            var employee = new Empregado("Joao");
             var registro = new Registro(ETipoRegistro.Saida, DateTime.Now, employee);
 
             //Assert 
@@ -37,7 +37,7 @@ namespace ControlAuvo.Tests
         {
             //Arrange
             //Act
-            var employee = new Employee("Joao");
+            var employee = new Empregado("Joao");
             var dataRegistro = DateTime.Now;
             var registro = new Registro(ETipoRegistro.Saida, dataRegistro, employee);
 
@@ -52,7 +52,7 @@ namespace ControlAuvo.Tests
         {
             //Arrange
             //Act
-            var employee = new Employee("Joao");
+            var employee = new Empregado("Joao");
             var dataRegistro = DateTime.Now;
             var registro = new Registro(ETipoRegistro.Entrada, dataRegistro, employee);
 

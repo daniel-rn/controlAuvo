@@ -17,11 +17,11 @@ namespace ControlAuvo.Data.Repository
 
         public override async Task Adicionar(Registro entity)
         {
-            var usu = _db.Employees.FirstOrDefault(d => d.Nome == entity.Employee.Nome);
+            var usu = _db.Employees.FirstOrDefault(d => d.Nome == entity.Empregado.Nome);
 
             if (usu != null)
             {
-                entity.Employee = usu;
+                entity.Empregado = usu;
             }
 
             await base.Adicionar(entity);

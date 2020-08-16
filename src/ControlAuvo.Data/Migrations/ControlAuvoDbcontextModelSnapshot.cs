@@ -18,7 +18,7 @@ namespace ControlAuvo.Data.Migrations
                 .HasAnnotation("ProductVersion", "3.1.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            modelBuilder.Entity("ControlAuvo.Business.Models.Employee", b =>
+            modelBuilder.Entity("ControlAuvo.Business.Models.Empregado", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -56,7 +56,7 @@ namespace ControlAuvo.Data.Migrations
 
             modelBuilder.Entity("ControlAuvo.Business.Models.Registro", b =>
                 {
-                    b.HasOne("ControlAuvo.Business.Models.Employee", "Employee")
+                    b.HasOne("ControlAuvo.Business.Models.Empregado", "Empregado")
                         .WithMany("Registros")
                         .HasForeignKey("EmployeeId");
                 });

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ControlAuvo.Business.Models
 {
-    public class Employee : Entity
+    public class Empregado : Entity
     {
-        public Employee(string nome)
+        public Empregado(string nome)
         {
             if (string.IsNullOrWhiteSpace(nome))
             {

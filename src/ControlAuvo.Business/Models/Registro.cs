@@ -8,19 +8,19 @@ namespace ControlAuvo.Business.Models
         {
         }
 
-        public Registro(ETipoRegistro tipoRegistro, DateTime data, Employee employee)
+        public Registro(ETipoRegistro tipoRegistro, DateTime data, Empregado empregado)
         {
             TipoRegistro = tipoRegistro;
             Data = data;
 
-            Employee = employee ?? throw new Exception("Deve ser informado o Employee");
+            Empregado = empregado ?? throw new Exception("Deve ser informado o Empregado");
         }
 
         public DateTime Data { get; set; }
 
         public ETipoRegistro TipoRegistro { get; }
 
-        public Employee Employee { get; set; }
+        public Empregado Empregado { get; set; }
 
         public int Tipo { get; set; }
     }

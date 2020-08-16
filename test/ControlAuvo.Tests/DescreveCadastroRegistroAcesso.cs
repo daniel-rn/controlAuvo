@@ -19,7 +19,7 @@ namespace ControlAuvo.Tests
         [Fact]
         public void Servico_deve_adicionar_registro_de_acesso()
         {
-            var employee = new Employee("Joao");
+            var employee = new Empregado("Joao");
             var entrada = new Registro(ETipoRegistro.Entrada, DateTime.Now, employee);
 
             var mock = new Mock<IRegistroService>();
@@ -33,7 +33,7 @@ namespace ControlAuvo.Tests
         [Fact]
         public void Servico_deve_atualizar_registro_de_acesso()
         {
-            var employee = new Employee("Joao");
+            var employee = new Empregado("Joao");
             var entrada = new Registro(ETipoRegistro.Entrada, DateTime.Now, employee);
 
             var serviceMock = new Mock<IRegistroService>();
@@ -48,7 +48,7 @@ namespace ControlAuvo.Tests
         [Fact]
         public void Servico_deve_remover_registro_de_acesso()
         {
-            var employee = new Employee("Joao");
+            var employee = new Empregado("Joao");
             var entrada = new Registro(ETipoRegistro.Entrada, DateTime.Now, employee);
 
             var mock = new Mock<IRegistroService>();
@@ -87,7 +87,7 @@ namespace ControlAuvo.Tests
         [Fact]
         public void Servico_deve_adicionar_registro_de_acesso_garantindo_a_passagem_pelo_repository()
         {
-            var employee = new Employee("Joao");
+            var employee = new Empregado("Joao");
             var entrada = new Registro(ETipoRegistro.Entrada, DateTime.Now, employee);
 
             var mockRepository = new Mock<IRegistroRepository>();
@@ -103,7 +103,7 @@ namespace ControlAuvo.Tests
         [Fact]
         public void Servico_deve_atualizar_registro_de_acesso_garantindo_a_passagem_pelo_repository()
         {
-            var employee = new Employee("Joao");
+            var employee = new Empregado("Joao");
             var entrada = new Registro(ETipoRegistro.Entrada, DateTime.Now, employee);
 
             var mockRepository = new Mock<IRegistroRepository>();
@@ -119,7 +119,7 @@ namespace ControlAuvo.Tests
         [Fact]
         public void Servico_deve_remover_registro_de_acesso_garantindo_a_passagem_pelo_repository()
         {
-            var employee = new Employee("Joao");
+            var employee = new Empregado("Joao");
             var entrada = new Registro(ETipoRegistro.Entrada, DateTime.Now, employee);
 
             var mockRepository = new Mock<IRegistroRepository>();

@@ -12,6 +12,6 @@ namespace ControlAuvo.Data.Context
 
         public DbSet<Registro> Registros { get; set; }
 
-        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Empregado> Employees { get; set; }
     }
 }

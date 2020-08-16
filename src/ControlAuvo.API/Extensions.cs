@@ -7,7 +7,7 @@ namespace ControlAuvo.API
     {
         public static Registro Converta(this RegistroModelView registroModelView)
         {
-            var emp = new Employee(registroModelView.Nome);
+            var emp = new Empregado(registroModelView.Nome);
 
             return new Registro(registroModelView.TipoRegistro, registroModelView.Data, emp)
             {

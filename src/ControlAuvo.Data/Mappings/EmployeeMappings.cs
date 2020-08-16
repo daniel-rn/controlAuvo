@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ControlAuvo.Data.Mappings
 {
-    public class EmployeeMappings : IEntityTypeConfiguration<Employee>
+    public class EmployeeMappings : IEntityTypeConfiguration<Empregado>
     {
-        public void Configure(EntityTypeBuilder<Employee> builder)
+        public void Configure(EntityTypeBuilder<Empregado> builder)
         {
-            builder.ToTable("Employee");
+            builder.ToTable("Empregado");
 
             builder.HasKey(c => c.Id);
 
@@ -17,8 +17,8 @@ namespace ControlAuvo.Data.Mappings
                 .HasColumnType("varchar(200)");
 
             builder.HasMany(c => c.Registros)
-                .WithOne(a => a.Employee)
-                .HasForeignKey(a => a.Employee.Id);
+                .WithOne(a => a.Empregado)
+                .HasForeignKey(a => a.Empregado.Id);
         }
     }
 }

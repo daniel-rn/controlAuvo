@@ -9,14 +9,14 @@ namespace ControlAuvo.Tests
         [Fact]
         public void Nao_deve_permitir_employee_sem_que_seja_informado_o_nome()
         {
-            Assert.Throws<Exception>(() => new Employee(string.Empty));
+            Assert.Throws<Exception>(() => new Empregado(string.Empty));
         }
 
         [Fact]
         public void Deve_para_cada_objeto_da_classe_employee_conter_um_identificador_unico()
         {
-            var empregadoA = new Employee("Joao");
-            var empregadoB = new Employee("Maria");
+            var empregadoA = new Empregado("Joao");
+            var empregadoB = new Empregado("Maria");
 
             Assert.True(!empregadoA.Id.Equals(empregadoB.Id));
         }
