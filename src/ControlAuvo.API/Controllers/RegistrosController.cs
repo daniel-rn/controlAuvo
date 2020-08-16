@@ -21,7 +21,6 @@ namespace ControlAuvo.API.Controllers
             _registroService = registroService;
         }
 
-        //getALL
         [HttpGet("obtenhaTodos")]
         public async Task<ActionResult<IEnumerable<Registro>>> ObtenhaTodos()
         {
@@ -30,7 +29,6 @@ namespace ControlAuvo.API.Controllers
             return CustomResponse(result);
         }
 
-        //getById
         [HttpGet("obterPorId/{id:guid}")]
         public async Task<ActionResult<Registro>> ObtenhaRegistroPorId(Guid id)
         {
@@ -38,7 +36,6 @@ namespace ControlAuvo.API.Controllers
             return CustomResponse(result);
         }
 
-        //Post
         [HttpPost("registrar")]
         public async Task<ActionResult<RegistroModelView>> Registrar(RegistroModelView registroModelView)
         {
@@ -59,7 +56,6 @@ namespace ControlAuvo.API.Controllers
             return CustomResponse(registroModelView);
         }
 
-        //Delete
         [HttpDelete("remover/{id:guid}")]
         public async Task<ActionResult> Deletar(Guid id)
         {
@@ -67,7 +63,6 @@ namespace ControlAuvo.API.Controllers
             return CustomResponse();
         }
 
-        //Put
         [HttpPut("atualizar")]
         public async Task<ActionResult> Atualizar(RegistroModelView registroModelView)
         {

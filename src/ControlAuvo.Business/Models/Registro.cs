@@ -21,10 +21,8 @@ namespace ControlAuvo.Business.Models
 
         public ETipoRegistro TipoRegistro { get; }
 
-        //public Guid EmployeeId { get; set; }
-
-        //Ef relations
         public Employee Employee { get; set; }
+
         public int Tipo { get; set; }
     }
 
@@ -48,7 +46,6 @@ namespace ControlAuvo.Business.Models
 
         public string Nome { get; set; }
 
-        //Ef Relations
         public IEnumerable<Registro> Registros { get; set; }
     }
 
