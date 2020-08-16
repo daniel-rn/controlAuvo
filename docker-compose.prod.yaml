@@ -1,0 +1,36 @@
+version: '3'
+    
+services:
+  webApp.API:
+    container_name: ControlAuvo.API
+    image: control-auvo-api
+    build:
+      context: .
+      dockerfile: src/SmartRdo.API/Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://+:5000
+    ports:
+      - "0.0.0.0:5000:5000"
+    networks:
+      - dockersql-network
+    depends_on:
+      - db.database
+
+  db.database:
+    container_name: control-auvo-db
+    image: postgres
+    restart: always
+    ports:
+      - "0.0.0.0:5432:5432"
+    networks:
+      - dockersql-network
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=ControlAuvo
+    volumes:
+      - /home/docker/pgdata:/var/lib/postgresql/data
+     
+networks: 
+  dockersql-network:
+    driver: bridge    

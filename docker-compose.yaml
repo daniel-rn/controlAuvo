@@ -1,0 +1,17 @@
+version: '3'
+    
+services:
+  db.database:
+    container_name: control-auvo-db
+    image: postgres
+    restart: always
+    ports:
+      - "0.0.0.0:5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=ControlAuvo
+    volumes:
+      - /home/docker/pgdata:/var/lib/postgresql/data
+      
+    
