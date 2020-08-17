@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ControlAuvo.Data.Migrations
 {
     [DbContext(typeof(ControlAuvoDbcontext))]
-    [Migration("20200816133743_initial")]
-    partial class initial
+    [Migration("20200817180445_initial_controlau")]
+    partial class initial_controlau
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,7 +44,7 @@ namespace ControlAuvo.Data.Migrations
                     b.Property<DateTime>("Data")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<Guid?>("EmployeeId")
+                    b.Property<Guid?>("EmpregadoId")
                         .HasColumnType("uuid");
 
                     b.Property<int>("Tipo")
@@ -52,7 +52,7 @@ namespace ControlAuvo.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EmployeeId");
+                    b.HasIndex("EmpregadoId");
 
                     b.ToTable("Registros");
                 });
@@ -61,7 +61,7 @@ namespace ControlAuvo.Data.Migrations
                 {
                     b.HasOne("ControlAuvo.Business.Models.Empregado", "Empregado")
                         .WithMany("Registros")
-                        .HasForeignKey("EmployeeId");
+                        .HasForeignKey("EmpregadoId");
                 });
 #pragma warning restore 612, 618
         }

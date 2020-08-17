@@ -3,6 +3,7 @@ using System;
 using ControlAuvo.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ControlAuvo.Data.Migrations
@@ -41,7 +42,7 @@ namespace ControlAuvo.Data.Migrations
                     b.Property<DateTime>("Data")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<Guid?>("EmployeeId")
+                    b.Property<Guid?>("EmpregadoId")
                         .HasColumnType("uuid");
 
                     b.Property<int>("Tipo")
@@ -49,7 +50,7 @@ namespace ControlAuvo.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EmployeeId");
+                    b.HasIndex("EmpregadoId");
 
                     b.ToTable("Registros");
                 });
@@ -58,7 +59,7 @@ namespace ControlAuvo.Data.Migrations
                 {
                     b.HasOne("ControlAuvo.Business.Models.Empregado", "Empregado")
                         .WithMany("Registros")
-                        .HasForeignKey("EmployeeId");
+                        .HasForeignKey("EmpregadoId");
                 });
 #pragma warning restore 612, 618
         }
