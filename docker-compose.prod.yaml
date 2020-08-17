@@ -6,7 +6,7 @@ services:
     image: control-auvo-api
     build:
       context: .
-      dockerfile: src/SmartRdo.API/Dockerfile
+      dockerfile: src/ControlAuvo.API/Dockerfile
     environment:
       - ASPNETCORE_URLS=http://+:5000
     ports:
