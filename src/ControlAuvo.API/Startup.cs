@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 
 namespace ControlAuvo.API
 {
@@ -27,6 +28,12 @@ namespace ControlAuvo.API
             services.AddControllers();
             services.AddCors();
             services.AddSwaggerConf();
+
+            services.AddControllersWithViews().AddNewtonsoftJson(x =>
+            {
+                x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
+
             services.ResolveDependencies();
         }
 
